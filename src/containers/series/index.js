@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import SeriesList from '../../components/SeriesList';
+import Intro from '../../components/Intro';
 
 class Series extends Component {
 
@@ -19,9 +20,11 @@ class Series extends Component {
 
     render() {
         return (
-            <div> Total: {this.state.series.length}
             <div>
-                <input type="text" onChange={this.onSeriesInputChange}/>
+            <Intro message="Welcome to web series" />
+            Total: {this.state.series.length}
+            <div>
+                <input type="text" onChange={this.onSeriesInputChange} placeholder="Search web series" />
             </div>
             {
                 this.state.series.length ===0 &&
